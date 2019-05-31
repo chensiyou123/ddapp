@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>welcome</title>
@@ -9,7 +9,14 @@
 </head>
 <body>
 <div>
-    <button id="btn_1">点击</button>
+    <form action="https://mobile.cmbchina.com/mobilehtml/DebitCard/M_NetPay/OneNetRegister/NP_BindCard.aspx" method="post">
+        <input type="hidden" name="sign" th:value="${sign}" /><br>
+        version：<input name="version" value='1.0' /><br>
+        charset：<input name="charset" value='UTF-8' /><br>
+        signType：<input name="signType" value='SHA-256' /><br>
+        reqData：<input name="reqData"th:value="${reqData}"/><br>
+        <input type="submit" value="提交"><br>
+    </form>
 </div>
 
 </body>
