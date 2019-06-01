@@ -102,7 +102,7 @@ public class StringUtil {
 			}
 			sb.append(keyArr[i] + "=" + map.get(keyArr[i]) + "&");
 		}
-		sb.append("key=" + Constant.key);
+		sb.append(Constant.key);
 		// 创建加密对象
 		try {
 			MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
@@ -148,10 +148,8 @@ public class StringUtil {
 		return sbResult.toString();
 	}
 
-	public static Object mapToObject(Map<String, Object> map, Class<?> beanClass)
-			throws Exception {
-		if (map == null)
-			return null;
+	public static Object mapToObject(Map<String, Object> map, Class<?> beanClass) throws Exception {
+		if (map == null) return null;
 		Object obj = beanClass.newInstance();
 		org.apache.commons.beanutils.BeanUtils.populate(obj, map);
 		return obj;
