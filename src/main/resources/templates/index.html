@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>welcome</title>
     <script type="javascript" src="/jquery.min.js"></script>
     <script type="javascript">
+        var  jsonRequestData ={
+            "version":"1.0",
+            "charset":"UTF-8",
+            "sign":"5486E4CA21C83E67549EF015720D8BFDECBDE3319CD91A325F8643E88161D20C",
+            "signType":"SHA-256",
+            "reqData":
+                {
+                    "dateTime":"20160623101430",
+                    "txCode":"CMCX",
+                    "branchNo":"0755",
+                    "merchantNo":"002346",
+                    "merchantSerialNo":"2016062310143088",
+                    "agrNo":"201606238888888"
+                }
+        }
     </script>
 </head>
 <body>
 <div>
-    <form action="https://mobile.cmbchina.com/mobilehtml/DebitCard/M_NetPay/OneNetRegister/NP_BindCard.aspx" method="post">
-        <input type="hidden" name="sign" th:value="${sign}" /><br>
-        version：<input name="version" value='1.0' /><br>
-        charset：<input name="charset" value='UTF-8' /><br>
-        signType：<input name="signType" value='SHA-256' /><br>
-        reqData：<input name="reqData"th:value="${reqData}"/><br>
-        <input type="submit" value="提交"><br>
+    qweqw
+    <form action="http://121.15.180.72/CmbBank_B2B/UI/NetPay/DoBusiness.ashx" method="post" />
+    <input type="hidden" name="jsonRequestData" value='以上json字符串' />
+    <input type="hidden" name="charset" value='UTF-8' />
+    <p><input type="submit" value="Submit" /></p>
     </form>
 </div>
 
